@@ -1,13 +1,13 @@
-.teacherContainer{
+.teacherContainer {
   padding: 170px 40px 0px 40px; 
 }
 
-.logoDako{
+.logoDako {
   display: flex;
   justify-content: center;
 }
 
-.UserPass{
+.UserPass {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
@@ -20,7 +20,7 @@
   margin-top: 30px;
 }
 
-.InputField{
+.InputField {
   width: 80%;
   border: none;
   border-bottom: 1px solid #000;
@@ -28,7 +28,7 @@
   padding: 5px 5px;
 }
 
-.loginButton{
+.loginButton {
   display: flex;
   height: 34px;
   padding: 9px 38px;
@@ -44,7 +44,7 @@
   font-weight: 700;
 }
 
-.forgotPassword{
+.forgotPassword {
   margin-top: 8px;
 
   color: #000;
@@ -53,4 +53,229 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+/* Dashboard Style */
+.viewDashboard{
+  padding: 40px 26px 28px 26px;
+}
+
+.header {
+  background-color: pink;
+}
+
+.logocont {
+  display: flex;
+  justify-content: center;
+}
+
+.Slogocsm {
+  width: 135px;
+  height: 24px;
+}
+
+.firstRow {
+  display: flex;
+  width: 307px;
+  padding: 5px 0px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profilecont {
+  display: flex;
+  align-items: center;
+  
+  color: #000;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.AccountLogo {
+  width: 31px;
+  height: 31px;
+}
+
+.AccountLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logoutcont {
+  display: flex;
+  padding: 0px 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #1B4D1A;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.secondRow {
+  color: #1B4D1A;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border-bottom: 2px solid #1B4D1A;
+  padding-bottom: 8px;
+}
+
+.navigation {
+  display: flex;
+  width: 312px;
+  padding: 2px 55px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.buttonCont {
+  width: 68px;
+  height: 65px;
+
+  display: flex;
+  width: 68px;
+  height: 65px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: #1B4D1A;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border-radius: 10px;
+  background: rgba(178, 223, 171, 0.20);
+}
+
+.navLogo {
+  width: 30px;
+  height: 30px;
+}
+
+.navLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.navLabel {
+  margin-top: 10px;
+}
+
+.transactionView{
+  margin-top: 25px;
+
+}
+
+.transList {
+  margin-top: 25px;
+}
+
+
+.transactionContainer{
+  border-radius: 7px;
+  background: #CEE6C5;
+  display: flex;
+  padding: 10px 10px 0px 10px;
+  flex-direction: column;
+  margin-bottom: 8px;
+
+}
+
+.transFirstRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+.transactionID{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  color: black
+}
+
+.currentStatus{
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5px;
+  
+  
+
+}
+
+.iconCurrentStatus{
+  
+  color: #E1A304;
+ 
+  display: flex;
+  align-items: center;
+  height: 5px;
+  width: 5px;
+  margin-right: 15px;
+  
+}
+
+.iconCurrentStatus svg{
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  
+}
+
+.penStatus{
+  color: #E1A304;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+.transSecondRow{
+  color: #8F8F8F;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 10px;
+
+}
+
+.timeanddate{
+  display: flex;
+  flex-direction: column;
+}
+
+.transThirdRow {
+    margin-top: 5px;
+    border-top: 1px solid rgba(160, 160, 160, 0.20);
+    padding: 5px 0px;
+    color: hsla(216, 2%, 42%, 1);
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 300;
+  
+  
 }
