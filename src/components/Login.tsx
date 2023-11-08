@@ -27,6 +27,6 @@ return(
             Forgot Password?
         </div>
     </div>
-    );
+);
 }
 export default LoginTeacher;
