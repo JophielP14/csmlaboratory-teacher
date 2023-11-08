@@ -1,4 +1,7 @@
-.teacherContainer {
+
+*{
+  text-decoration: none;
+}.teacherContainer {
   padding: 170px 40px 0px 40px; 
 }
 
@@ -157,6 +160,26 @@
   border-radius: 10px;
   background: rgba(178, 223, 171, 0.20);
 }
+.button-active {
+  width: 68px;
+  height: 65px;
+
+  display: flex;
+  width: 68px;
+  height: 65px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: #1B4D1A;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border-radius: 10px;
+  background: #B2DFAB;
+}
 
 .navLogo {
   width: 30px;
@@ -244,6 +267,49 @@
   font-style: normal;
   font-weight: 600;
 }
+.rejStatus{
+  color: #db4444;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+
+
+}
+.accStatus{
+  color: #00360C;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+
+
+}
+.iconRejStatus{
+  color: #db4444;
+  display: flex;
+  align-items: center;
+  height: 5px;
+  width: 5px;
+  margin-right: 15px;
+}
+.iconRejStatus svg{
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.iconAccStatus{
+  color: #00360C;
+  display: flex;
+  align-items: center;
+  height: 5px;
+  width: 5px;
+  margin-right: 15px;
+}
+.iconAccStatus svg{
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+}
 
 
 .transSecondRow{
@@ -295,7 +361,8 @@
 
 }
 .mainlogoView{
-
+  background-color: transparent;
+  border: none;
   width: 160px;
   height: 30px;
  
@@ -304,6 +371,11 @@
 .viewArrowIcon{
   height: 4px;
   width: 4px;
+  
+}
+.customArrow{
+  background-color: transparent;
+  border: none;
 }
 
 /*PV-2*/
@@ -356,6 +428,59 @@
   
 }
 
+.viewStatusRejected{
+ 
+  display: flex;
+  padding: 5px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  background: #FFE9E9;
+  color: #360000;
+  text-align: center;
+ 
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 20px 25px 0px 25px;
+ 
+}
+
+.viewStatusRejected span{
+  color: #360000;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  
+}
+
+.viewStatusAccepted{
+ 
+  display: flex;
+  padding: 5px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  background: #B2DFAB;
+  color: #1B4D1A;
+  text-align: center;
+ 
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 20px 25px 0px 25px;
+ 
+}
+
+.viewStatusAccepted span{
+  color:#1B4D1A;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  
+}
 .noteStatus {
   align-self: stretch;
 
@@ -484,6 +609,43 @@
   font-weight: 400;
   
 }
+.viewStatusAccepted2 span {
+  color: #1B4D1A;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.viewStatusAccepted2 {
+  padding: 5px 10px 5px 10px;
+  align-items: center;
+  border-radius: 10px;
+  background: #B2DFAB;
+  color: #1B4D1A;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  
+}
+.viewStatusRejected2 {
+  padding: 5px 10px 5px 10px;
+  align-items: center;
+  border-radius: 10px;
+  background: #FFE9E9;
+  color: #360000;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+}
+.viewStatusRejected2 span {
+  color: #360000;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+
 .eachIndex{
   margin-right: 15px;
 }

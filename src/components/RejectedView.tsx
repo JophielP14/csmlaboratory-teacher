@@ -5,7 +5,7 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Link } from 'react-router-dom';
 
-function PendingView() {
+function RejectedView() {
     
    
         const pendingItems = [
@@ -13,7 +13,7 @@ function PendingView() {
               id: 1034,
               date: 'August 19, 2023',
               time: '9:00am',
-              status: 'Pending',
+              status: 'Rejected',
               items: 
                 [
                     {name: 'Petri Dishes', quantity: 3, breakage: 1},
@@ -76,12 +76,10 @@ return (
         {pendingItems.map((item) => (
             <div className="papercontentStatus">
                 <div className="statusCont">
-                    <div className="viewStatusPending">
-                        Status:<span>{item.status} </span>
+                    <div className="viewStatusRejected">
+                        Status:<span> &nbsp;{item.status} </span>
                     </div>
-                    <div className="noteStatus">
-                        Note: <span>Review the request equipment by your student.</span>
-                    </div>
+                    
                 </div>
      
                 <div className="viewPaperContent">
@@ -109,8 +107,8 @@ return (
                         <div className="viewInst">
                           Ms. Jerilyn Yare
                         </div>
-                        <div className="viewStatusPending2">
-                            Status: <span>{item.status} </span>
+                        <div className="viewStatusRejected2">
+                            Status:<span> &nbsp;{item.status} </span>
                         </div>
                     </div>
 
@@ -145,7 +143,7 @@ return (
                     <div className='totalQuantityLabel'>
                         <span>Total Borrowed:</span>
                         &nbsp;&nbsp;
-                       {totalQuantity}
+                        {totalQuantity}
                     </div>
 
                     <div className='viewTitleLabel'>Members </div>
@@ -184,11 +182,9 @@ return (
             ))}
         <div className="buttonsCont">
             <Link to="/Dashboard" className="doneViewButton">
-                Approve
+                Done View
             </Link>
-            <Link to="/Dashboard" className="cancelViewButton">
-                Reject
-            </Link>
+            
         </div>
         
 
@@ -196,4 +192,4 @@ return (
     );
 }
 
-export default PendingView;
+export default RejectedView;
