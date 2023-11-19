@@ -101,19 +101,33 @@ return (
                             </div>
                     </div>
                     ))}
+
+                    <div className='viewTitleLabel'>Members </div>        
+                    <div className='viewMembersInfo'>
+                        {membersDetails.map((member, index)=>(     
+                            <div className='viewEachInfo' key={index}>
+                                <div className='eachIndex'>
+                                    {index+1}
+                                </div>
+                                <div className='eachmemID'>
+                                    {member.idNumber}
+                                </div>
+                                <div className='eachmemNAME'>
+                                    {member.Name}  
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                     
                     <div className='viewTitleLabel'> Instructor </div>
-                    <div className='viewInstructor'>
+                    <div className='viewAfterLabel'>
                         <div className="viewInst">
                           Ms. Jerilyn Yare
-                        </div>
-                        <div className="viewStatusAccepted2">
-                            Status: <span>{item.status} </span>
                         </div>
                     </div>
 
                     <div className='viewTitleLabel'> Subject </div>
-                    <div className='viewItemsSelected'>
+                    <div className='viewAfterLabel'>
                         <div className="viewEachInfo">
                          Chemistry 
                         </div>
@@ -146,25 +160,6 @@ return (
                         10
                     </div>
 
-                    <div className='viewTitleLabel'>Members </div>
-                            
-                        <div className='viewMembersInfo'>
-                        {membersDetails.map((member, index)=>(     
-                            <div className='viewEachInfo' key={index}>
-                                <div className='eachIndex'>
-                                {index+1}
-                                </div>
-                                <div className='eachmemID'>
-                            
-                            {member.idNumber}
-                                </div>
-                                <div className='eachmemNAME'>
-                            {member.Name}
-                                    
-                                </div>
-                            </div>
-                        ))}
-                    </div>
 
                     <div className='viewDateTime'>
                         <div className='viewDate'>

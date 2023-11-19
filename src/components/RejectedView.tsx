@@ -50,6 +50,19 @@ function RejectedView() {
                 
             }   
             ]
+
+            const instructor = [
+            {
+                  idNumber: 2055060541,
+                  Name: 'Ms. Jerilyn Yare',
+                }
+            ]
+              
+            const labtech = [
+                {
+                  Name: "Prince Kurt Laurence",
+                }
+            ]
     
         let totalQuantity = 0;
             pendingItems.forEach((item) => {
@@ -101,19 +114,34 @@ return (
                             </div>
                     </div>
                     ))}
+
+                    <div className='viewTitleLabel'>Members </div>
+                            
+                    <div className='viewMembersInfo'>
+                    {membersDetails.map((member, index)=>(     
+                        <div className='viewEachInfo' key={index}>
+                            <div className='eachIndex'>
+                                {index+1}
+                            </div>
+                            <div className='eachmemID'>
+                                {member.idNumber}
+                            </div>
+                            <div className='eachmemNAME'>
+                                {member.Name}
+                            </div>
+                        </div>
+                    ))}
+                    </div>
                     
                     <div className='viewTitleLabel'> Instructor </div>
-                    <div className='viewInstructor'>
+                    <div className='viewAfterLabel'>
                         <div className="viewInst">
                           Ms. Jerilyn Yare
-                        </div>
-                        <div className="viewStatusRejected2">
-                            Status:<span> &nbsp;{item.status} </span>
                         </div>
                     </div>
 
                     <div className='viewTitleLabel'> Subject </div>
-                    <div className='viewItemsSelected'>
+                    <div className='viewAfterLabel'>
                         <div className="viewEachInfo">
                          Chemistry 
                         </div>
@@ -146,24 +174,27 @@ return (
                         {totalQuantity}
                     </div>
 
-                    <div className='viewTitleLabel'>Members </div>
-                            
+                    {/* Approved by View */}
+                    <div className="approvedCont">
+                        <div className='viewTitleLabel'>Approved by: </div>
                         <div className='viewMembersInfo'>
-                        {membersDetails.map((member, index)=>(     
-                            <div className='viewEachInfo' key={index}>
-                                <div className='eachIndex'>
-                                {index+1}
+                            {instructor.map((instructor, index)=>(       
+                                <div className='viewEachInfo'>
+                                <ul className='eachmemNAME'>
+                                    <li>Instructor: <b>{instructor.Name}</b></li>       
+                                </ul>
                                 </div>
-                                <div className='eachmemID'>
-                            
-                            {member.idNumber}
-                                </div>
-                                <div className='eachmemNAME'>
-                            {member.Name}
-                                    
-                                </div>
+                            ))}
+                            {labtech.map((labtech, index)=>(       
+                            <div className='viewEachInfo'>
+                                <ul className='eachmemNAME'>
+                                <li>Lab Technician: 
+                                    {/* <b>{labtech.Name} </b> */}
+                                </li>  
+                                </ul>
                             </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
                     <div className='viewDateTime'>
