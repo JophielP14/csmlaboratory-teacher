@@ -1,4 +1,6 @@
 import CSMLogo from "../assets/Logo_dako.png"
+import { Link } from 'react-router-dom';
+
 
 
 function LoginTeacher(){
@@ -19,14 +21,14 @@ return(
             </div>
         </div>
         
-        <div className="loginButton">
+        <Link to="/Dashboard" className="loginButton">
             Login
-        </div>
+        </Link>
 
         <div className="forgotPassword">
             Forgot Password?
         </div>
     </div>
-    );
+);
 }
 export default LoginTeacher;
