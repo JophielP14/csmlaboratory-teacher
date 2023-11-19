@@ -534,6 +534,13 @@
  
   
 }
+
+.firstRow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .student-details{
   display: flex;
   flex-direction: column;

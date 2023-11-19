@@ -46,7 +46,8 @@ function RejectedView() {
             {
                 idNumber: 201854265,
                 name: 'Sofia Dara Alilin',
-                Dept: 'BSCHEMISTRY'
+                Dept: 'BSCHEMISTRY',
+                section: 'CHEM1H2'
                 
             }   
             ]
@@ -100,18 +101,23 @@ return (
             
                     <div className="titleID"> Transaction ID  &nbsp; <span> #{item.id}</span></div>
                     {studentDetails.map((student)=>(
-                    <div className='viewStudentInfo'>
+                    <div className="firstRow">
+                        <div className='viewStudentInfo'>
                             <div className='iconProfileContainer'> 
-                            <AccountCircleOutlinedIcon/>
+                                <AccountCircleOutlinedIcon/>
                             </div>
                             <div className='student-details'>
-                            <div className='student-Name'>
-                                {student.name}
+                                <div className='student-Name'>
+                                    {student.name}
+                                </div>
+                                <div className='student-ID-Dept'>
+                                    {student.idNumber}-{student.Dept}
+                                </div>
                             </div>
-                            <div className='student-ID-Dept'>
-                                {student.idNumber}-{student.Dept}
-                            </div>
-                            </div>
+                        </div>
+                        <div className="sectionContainer">
+                            Section: <b>{student.section}</b>
+                        </div>
                     </div>
                     ))}
 
@@ -161,8 +167,6 @@ return (
                                     </div>
                                     <div className='eachItemDetails'>
                                         {selectedItems.name}
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
-                                    {selectedItems.quantity}
                                     </div>
                                 </div>      
                             ))}   
