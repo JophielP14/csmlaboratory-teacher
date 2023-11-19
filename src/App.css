@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+.teacherContainer{
+  padding: 170px 40px 0px 40px; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logoDako{
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.UserPass{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.formContainer{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.InputField{
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: none;
+  padding: 5px 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginButton{
+  display: flex;
+  height: 34px;
+  padding: 9px 38px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  background: #C8ECB8;
+
+  color: #0A4610;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.forgotPassword{
+  margin-top: 8px;
+
+  color: #000;
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
