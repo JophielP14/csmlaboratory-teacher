@@ -46,7 +46,8 @@ function AcceptedView() {
             {
                 idNumber: 201854265,
                 name: 'Sofia Dara Alilin',
-                Dept: 'BSCHEMISTRY'
+                Dept: 'BSCHEMISTRY',
+                section: 'CHEM1H2'
                 
             }   
             ]
@@ -87,33 +88,52 @@ return (
             
                     <div className="titleID"> Transaction ID  &nbsp; <span> #{item.id}</span></div>
                     {studentDetails.map((student)=>(
-                    <div className='viewStudentInfo'>
+                    <div className="firstRow">
+                        <div className='viewStudentInfo'>
                             <div className='iconProfileContainer'> 
-                            <AccountCircleOutlinedIcon/>
+                                <AccountCircleOutlinedIcon/>
                             </div>
                             <div className='student-details'>
-                            <div className='student-Name'>
-                                {student.name}
+                                <div className='student-Name'>
+                                    {student.name}
+                                </div>
+                                <div className='student-ID-Dept'>
+                                    {student.idNumber}-{student.Dept}
+                                </div>
                             </div>
-                            <div className='student-ID-Dept'>
-                                {student.idNumber}-{student.Dept}
-                            </div>
-                            </div>
+                        </div>
+                        <div className="sectionContainer">
+                            Section: <b>{student.section}</b>
+                        </div>
                     </div>
                     ))}
+
+                    <div className='viewTitleLabel'>Members </div>        
+                    <div className='viewMembersInfo'>
+                        {membersDetails.map((member, index)=>(     
+                            <div className='viewEachInfo' key={index}>
+                                <div className='eachIndex'>
+                                    {index+1}
+                                </div>
+                                <div className='eachmemID'>
+                                    {member.idNumber}
+                                </div>
+                                <div className='eachmemNAME'>
+                                    {member.Name}  
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                     
                     <div className='viewTitleLabel'> Instructor </div>
-                    <div className='viewInstructor'>
+                    <div className='viewAfterLabel'>
                         <div className="viewInst">
                           Ms. Jerilyn Yare
-                        </div>
-                        <div className="viewStatusAccepted2">
-                            Status: <span>{item.status} </span>
                         </div>
                     </div>
 
                     <div className='viewTitleLabel'> Subject </div>
-                    <div className='viewItemsSelected'>
+                    <div className='viewAfterLabel'>
                         <div className="viewEachInfo">
                          Chemistry 
                         </div>
@@ -133,8 +153,6 @@ return (
                                     </div>
                                     <div className='eachItemDetails'>
                                         {selectedItems.name}
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;
-                                    {selectedItems.quantity}
                                     </div>
                                 </div>      
                             ))}   
@@ -146,25 +164,6 @@ return (
                         10
                     </div>
 
-                    <div className='viewTitleLabel'>Members </div>
-                            
-                        <div className='viewMembersInfo'>
-                        {membersDetails.map((member, index)=>(     
-                            <div className='viewEachInfo' key={index}>
-                                <div className='eachIndex'>
-                                {index+1}
-                                </div>
-                                <div className='eachmemID'>
-                            
-                            {member.idNumber}
-                                </div>
-                                <div className='eachmemNAME'>
-                            {member.Name}
-                                    
-                                </div>
-                            </div>
-                        ))}
-                    </div>
 
                     <div className='viewDateTime'>
                         <div className='viewDate'>
