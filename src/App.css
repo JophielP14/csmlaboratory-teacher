@@ -200,8 +200,17 @@
 
 }
 
+.dropdown{
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+}
+.sectionFilterLabelCont{
+  margin-right: 10px;
+}
+
 .transList {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 
