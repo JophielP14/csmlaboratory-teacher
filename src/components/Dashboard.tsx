@@ -7,19 +7,51 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-function Dashboard(){
-    const [selectedItem, setSelectedItem] = useState('Pending');
-    const handleButtonClick = (item: string) => {
-        setSelectedItem(item);
-      };
+interface Transaction {
+    id: number;
+    date: string;
+    time: string;
+    status: string;
+    section: string;
+  }
 
+function Dashboard(){
+    const [selectedItem, setSelectedItem] = useState<string>('Pending');
+    const [selectedSection, setSelectedSection] = useState<string>('All');
+  
+    const handleButtonClick = (item: string) => {
+      setSelectedItem(item);
+    };
+  
+    const handleSectionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSelectedSection(event.target.value);
+    };
+  
+
+      
     const pendingItems = [
         {
           id: 1034,
           date: 'August 19, 2023',
           time: '9:00am',
-          status: 'Pending'
-        }
+          status: 'Pending',
+          section: 'CHEM1H1'
+          
+        },
+        {
+            id: 1034,
+            date: 'August 19, 2023',
+            time: '9:00am',
+            status: 'Pending',
+            section: 'CHEM1H1'
+        },
+        {
+          id: 1034,
+          date: 'August 19, 2023',
+          time: '9:00am',
+          status: 'Pending',
+          section: 'CHEM1H2'
+        },
         
        
       ]
@@ -29,18 +61,39 @@ function Dashboard(){
           id: 1034,
           date: 'August 19, 2023',
           time: '9:00am',
-          status: 'Rejected'
+          status: 'Rejected',
+          section: 'CHEM1H1'
         },
         {
-            id: 1034,
+            id: 1035,
             date: 'August 19, 2023',
             time: '9:00am',
-            status: 'Accepted'
+            status: 'Rejected',
+            section: 'CHEM1H2'
+          },
+        {
+            id: 1036,
+            date: 'August 19, 2023',
+            time: '9:00am',
+            status: 'Accepted',
+            section: 'CHEM1H1'
+        },
+        {
+            id: 1037,
+            date: 'August 19, 2023',
+            time: '9:00am',
+            status: 'Accepted',
+            section: 'CHEM1H3'
         }
         
         
        
       ]
+
+      const allSections = Array.from(new Set([...pendingItems.map(item => item.section), ...recentItems.map(item => item.section)]));
+
+      const filteredPendingItems: Transaction[] = selectedSection === 'All' ? pendingItems : pendingItems.filter(item => item.section === selectedSection);
+      const filteredRecentItems: Transaction[] = selectedSection === 'All' ? recentItems : recentItems.filter(item => item.section === selectedSection);
     
 return(
     <div className="viewDashboard">
@@ -97,63 +150,71 @@ return(
                 </div>
             </Link>
         </div>
-        <div className="transList">
-        {selectedItem === 'Pending' && (
-            pendingItems.map((item) => (
-            <Link to={`/transaction/${item.id}`} className="transactionContainer">
-                <div className="transFirstRow">
-                    <div className="transactionID">
-                    Transaction ID{item.id}
-                    </div>
-                    <div className="currentStatus">
-                    <div className="iconCurrentStatus">
-                        <CircleIcon />
-                    </div>
-                    <div className='penStatus'>{item.status}</div>
-                    </div>
-                </div>
-                <div className="transSecondRow">
-                    <div className="timeanddate">
-                    <div>{item.date}</div>
-                    <div>{item.time}</div>
-                    </div>
-                </div>
-                <div className="transThirdRow">
-                    Tap to View
-                </div>
-            </Link>
-            ))
-            )}
 
-        {selectedItem === 'Recent' && (
-            recentItems.map((item) => (
-            <Link to={item.status === 'Rejected' ? `/transaction/rejected/${item.id}` : `/transaction/accepted/${item.id}`} className="transactionContainer">
-                <div className="transFirstRow">
-                    <div className="transactionID">
-                    Transaction ID{item.id}
-                    </div>
-                    <div className="currentStatus">
-                        <div className={item.status === 'Rejected' ? 'iconRejStatus' : 'iconAccStatus'}>
-                            <CircleIcon />
-                            </div>
-                        <div className={item.status === 'Rejected' ? 'rejStatus' : 'accStatus'}>{item.status}</div>
-                    </div>
+      {/* Dropdown filter */}
+      <div className="dropdown">
+        <div className="sectionFilterLabelCont"><label htmlFor="sectionFilterLabel">Filter by: </label></div>
+        <select id="sectionFilter" onChange={handleSectionChange} value={selectedSection}>
+          <option value="All">All Sections</option>
+          {allSections.map(section => (
+            <option key={section} value={section}>{section}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Transaction list */}
+      <div className="transList">
+        {selectedItem === 'Pending' && filteredPendingItems.map((item) => (
+          <Link key={item.id} to={`/transaction/${item.id}`} className="transactionContainer">
+            <div className="transFirstRow">
+              <div className="transactionID">
+                Transaction ID {item.id}
+              </div>
+              <div className="currentStatus">
+                <div className="iconCurrentStatus">
+                  <CircleIcon />
                 </div>
-                <div className="transSecondRow">
-                    <div className="timeanddate">
-                    <div>{item.date}</div>
-                    <div>{item.time}</div>
-                    </div>
+                <div className='penStatus'>{item.status}</div>
+              </div>
+            </div>
+            <div className="transSecondRow">
+              <div className="timeanddate">
+                <div>{item.date}</div>
+                <div>{item.time}</div>
+              </div>
+            </div>
+            <div className="transThirdRow">
+              Tap to View
+            </div>
+          </Link>
+        ))}
+
+        {selectedItem === 'Recent' && filteredRecentItems.map((item) => (
+          <Link key={item.id} to={item.status === 'Rejected' ? `/transaction/rejected/${item.id}` : `/transaction/accepted/${item.id}`} className="transactionContainer">
+            <div className="transFirstRow">
+              <div className="transactionID">
+                Transaction ID {item.id}
+              </div>
+              <div className="currentStatus">
+                <div className={item.status === 'Rejected' ? 'iconRejStatus' : 'iconAccStatus'}>
+                  <CircleIcon />
                 </div>
-                <div className="transThirdRow">
-                    Tap to View
-                </div>
-            </Link>
-            ))
-            )}
-        </div>
+                <div className={item.status === 'Rejected' ? 'rejStatus' : 'accStatus'}>{item.status}</div>
+              </div>
+            </div>
+            <div className="transSecondRow">
+              <div className="timeanddate">
+                <div>{item.date}</div>
+                <div>{item.time}</div>
+              </div>
+            </div>
+            <div className="transThirdRow">
+              Tap to View
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
-    
-);
+  );
 }
 export default Dashboard;
